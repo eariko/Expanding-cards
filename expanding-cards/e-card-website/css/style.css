@@ -1,0 +1,72 @@
+:root {
+    --color-white: rgb(255, 255, 255);
+    --typo-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--typo-font);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-cards {
+    width: 90%;
+    height: 60%;
+    display: flex;
+    margin: 0;
+    text-align: center;
+
+}
+
+.panel-cards {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--color-white);
+    border-radius: 45px;
+    flex: 0.5;
+    margin: 5px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+    cursor: pointer;
+
+}
+
+.panel-cards h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-weight: 700;
+    opacity: 0;
+    size: 25rem;
+    border-radius: 45px;
+    padding: 15px;
+}
+
+.panel-cards.active {
+    flex: 5;
+}
+
+.panel-cards.active h3 {
+    opacity: 1;
+    transition: opacity 0.4s ease-in 0.4s;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media(max-width: 580px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel-cards:nth-of-type(4), .panel:nth-of-type(5) {
+        display: none;
+    }
+    
+}
